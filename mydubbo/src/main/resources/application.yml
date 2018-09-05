@@ -1,0 +1,6 @@
+server:
+  port: 8080
+Loggers:
+  logger:
+    name: org.apache.logging.log4j.Logger
+    level: debug
