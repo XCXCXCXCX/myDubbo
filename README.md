@@ -1,7 +1,7 @@
 # myDubbo
 用netty、zookeeper自己动手实现dubbo基本功能    
 
-###摘要
+### 摘要
 最近在学习zookeeper的选举机制和使用、java如何调用及应用场景，dubbo理所应当的进入了我的视野，作为阿里开源的强大中间件dubbo，我们也应该了解其基本原理和应用场景。
 RPC，远程服务调用，dubbo作为服务调用的中间人，为服务消费者和服务提供者来提供服务，首先，要知道dubbo的主要功能：
 
@@ -21,7 +21,7 @@ RPC，远程服务调用，dubbo作为服务调用的中间人，为服务消费
  - netty
  - jdk自带动态代理
 
-###服务注册中心：服务注册和服务发现
+### 服务注册中心：服务注册和服务发现
 由于需要调用zookeeper，先搭建好[zookeeper环境](https://blog.csdn.net/morning99/article/details/40426133)。
 
  1. 既然需要连接zookeeper，需要一个管理zk连接的类
@@ -113,7 +113,7 @@ public class ServiceRegistry {
 ```
 
 
-###指定通讯协议，利用netty实现异步通讯
+### 指定通讯协议，利用netty实现异步通讯
 谈到通讯，无非就是server和client，理清server和client的任务：
 Server:
 
@@ -443,7 +443,7 @@ public class MyDubboClientHandler extends ChannelInboundHandlerAdapter{
 ```
 
 
-###jdk动态代理实现无感知调用
+### jdk动态代理实现无感知调用
 先感受一下"无感知"
 
 ```
@@ -562,7 +562,7 @@ public class ClientApplication {
 }
 ```
 
-###小结
+### 小结
 我感觉到我已经开始有代码洁癖了，动手后总觉得有很多不足，比如：
 
  - server、client没有分离打包，可以实现dubbo服务启动后，用多个服务引入mydubbo-client jar包来测试
